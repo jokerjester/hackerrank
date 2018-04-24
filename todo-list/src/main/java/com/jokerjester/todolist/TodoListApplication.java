@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-import com.jokerjester.entity.List;
+import com.jokerjester.entity.TodoList;
 import com.jokerjester.repository.ListRepository;
 
 @ComponentScan(basePackages= {"com"})
@@ -27,19 +27,19 @@ public class TodoListApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 
-		listRepository.deleteAll();
-
-		// save a couple of customers
-		listRepository.save(new List(UUID.randomUUID().toString(),"Alice2", "Smith2"));
-		listRepository.save(new List(UUID.randomUUID().toString(),"Alice2", "Smith2"));
-
-		// fetch all customers
-		System.out.println("Customers found with findAll():");
-		System.out.println("-------------------------------");
-		for (List customer : listRepository.findAll()) {
-			System.out.println(customer);
-		}
-		System.out.println();
+//		listRepository.deleteAll();
+//
+//		// save a couple of customers
+//		listRepository.save(new TodoList(UUID.randomUUID().toString(),"Alice2", "Smith2"));
+//		listRepository.save(new TodoList(UUID.randomUUID().toString(),"Alice2", "Smith2"));
+//
+//		// fetch all customers
+//		System.out.println("Customers found with findAll():");
+//		System.out.println("-------------------------------");
+//		for (TodoList customer : listRepository.findAll()) {
+//			System.out.println(customer);
+//		}
+//		System.out.println();
 
 		// fetch an individual customer
 //		System.out.println("Customer found with findByFirstName('Alice'):");

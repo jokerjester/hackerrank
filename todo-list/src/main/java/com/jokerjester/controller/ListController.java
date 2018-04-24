@@ -6,12 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.jokerjester.entity.List;
+import com.jokerjester.entity.TodoList;
 import com.jokerjester.service.ListService;
 
 @Controller
@@ -27,16 +24,20 @@ public class ListController {
 	}
 	
 	@GetMapping(path="/find-list")
-	public Object findAll() {		
-		return listService.findAll();
+	public String findAll() {	
+		for(TodoList l : listService.findAll()) {
+			System.out.println(l);
+		}
+		return "greeting";
 	}
 	
 	@GetMapping(path="/insert-list")
-	public Object insert() {	
-		List list = new List();
+	public String insert() {	
+		TodoList list = new TodoList();
 		list.setId(UUID.randomUUID().toString());
 		list.setDate("25610423");
 		list.setDetail("TEST");
-		return listService.insert(list);
+		 listService.insert(list);
+		 return "greeting";
 	}
 }

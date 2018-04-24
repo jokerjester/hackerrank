@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class List {
+public class TodoList {
 	
 	@Id
 	String id;
@@ -12,11 +12,11 @@ public class List {
 	String date;
 	String detail;
 	
-	public List() {
+	public TodoList() {
 		
 	}
 	
-	public List(String id, String date, String detail) {
+	public TodoList(String id, String date, String detail) {
 		super();
 		this.id = id;
 		this.date = date;
